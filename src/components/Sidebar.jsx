@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { LayoutDashboard, BookOpen, PenTool, Target, AlertTriangle, Bookmark, Brain, Calculator, Calendar, Zap } from 'lucide-react';
 
-export default function Sidebar() {
+export default function Sidebar({ isOpen, closeSidebar }) {
   const menuItems = [
     { name: 'Dashboard', path: '/dashboard', icon: LayoutDashboard },
     { name: 'MasterBook', path: '/book', icon: BookOpen },
@@ -16,7 +16,7 @@ export default function Sidebar() {
   ];
 
   return (
-    <aside className="sidebar">
+    <aside className={`sidebar ${isOpen ? 'open' : ''}`}>
       <div className="sidebar-header">
         IOCL MasterBook
       </div>
@@ -27,6 +27,7 @@ export default function Sidebar() {
             <NavLink
               key={item.path}
               to={item.path}
+              onClick={closeSidebar}
               className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}
             >
               <Icon size={18} />

@@ -68,7 +68,7 @@ export default function PracticeLab() {
         <p className="text-muted">Master topics by solving targeted questions.</p>
       </div>
 
-      <div className="card" style={{ display: 'flex', gap: '20px', background: 'var(--panel)' }}>
+      <div className="card flex-responsive" style={{ display: 'flex', gap: '20px', background: 'var(--panel)' }}>
         <div style={{ flex: 1 }}>
           <label style={{ display: 'block', marginBottom: '8px', fontWeight: 600 }}>Subject</label>
           <select 

@@ -29,12 +29,12 @@ export default function ErrorBook() {
         <p className="text-muted">Review your mistakes to prevent repeating them in the actual exam.</p>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '30px' }}>
+      <div className="errorbook-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '30px' }}>
         <div className="card" style={{ padding: '0', overflow: 'hidden' }}>
           <h2 style={{ padding: '20px', borderBottom: '1px solid var(--border)', margin: 0, fontSize: '1.1rem' }}>
             Logged Errors ({errors.length})
           </h2>
-          <div style={{ maxHeight: '600px', overflowY: 'auto' }}>
+          <div className="errorbook-list" style={{ maxHeight: '600px', overflowY: 'auto' }}>
             {errors.map(([id, data]) => (
               <div 
                 key={id} 

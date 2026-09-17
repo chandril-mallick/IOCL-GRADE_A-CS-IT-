@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Dashboard from './pages/Dashboard';
@@ -10,11 +11,23 @@ import Formulas from './pages/Formulas';
 import Bookmarks from './pages/Bookmarks';
 import SevenDayPlan from './pages/SevenDayPlan';
 import LastDay from './pages/LastDay';
+import { Menu } from 'lucide-react';
 
 function App() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
+  const closeSidebar = () => setIsSidebarOpen(false);
+
   return (
     <div className="app-container">
-      <Sidebar />
+      <button className="mobile-nav-toggle" onClick={toggleSidebar}>
+        <Menu size={24} />
+      </button>
+
+      <Sidebar isOpen={isSidebarOpen} closeSidebar={closeSidebar} />
+      <div className="sidebar-overlay" onClick={closeSidebar}></div>
+
       <main className="main-content">
         <Routes>
           <Route path="/" element={<Navigate to="/dashboard" replace />} />

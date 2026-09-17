@@ -23,7 +23,7 @@ export default function Dashboard() {
         <p className="text-muted">Welcome back. Here is your preparation status.</p>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '20px', marginBottom: '30px' }}>
+      <div className="grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '20px', marginBottom: '30px' }}>
         <div className="card" style={{ marginBottom: 0 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
             <div style={{ padding: '10px', background: 'var(--primary)', color: 'white', borderRadius: '50%' }}>
@@ -71,7 +71,7 @@ export default function Dashboard() {
         </div>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '30px' }}>
+      <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '30px' }}>
         <div>
           <div className="card">
             <h2 className="card-title">Subject Progress</h2>

@@ -6,9 +6,9 @@ export default function StudyBook() {
   const [activeChapter, setActiveChapter] = useState(syllabusData[0].chapters[0]);
 
   return (
-    <div style={{ display: 'flex', gap: '40px', height: '100%' }}>
+    <div className="studybook-container" style={{ display: 'flex', gap: '40px', height: '100%' }}>
       {/* Sidebar for chapters */}
-      <div style={{ width: '300px', flexShrink: 0, overflowY: 'auto', borderRight: '1px solid var(--border)', paddingRight: '20px' }}>
+      <div className="studybook-sidebar" style={{ width: '300px', flexShrink: 0, overflowY: 'auto', borderRight: '1px solid var(--border)', paddingRight: '20px' }}>
         <h2 style={{ marginBottom: '20px', color: 'var(--primary)' }}>Syllabus</h2>
         {syllabusData.map((subj) => (
           <div key={subj.id} className="subject-group">
